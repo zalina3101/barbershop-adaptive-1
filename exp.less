@@ -1,0 +1,366 @@
+.menu {
+  position: relative;
+  width: auto;
+
+  &__toggle {
+    background-color: $bg-color-menu-login;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    z-index: 10;
+
+    &--closed::after,
+    &--opened::before,
+    &--opened::after {
+      background-color: $color-white;
+      content: "";
+      height: 2px;
+      position: absolute;
+      width: 36px;
+    }
+
+    &--closed::after {
+      box-shadow: 0 8px 0 0 $color-white,
+                  0 16px 0 0 $color-white;
+      right: 50%;
+      transform: translateX(50%);
+      top: 15px;
+    }
+
+    &--closed:active::after {
+      box-shadow: 0 8px 0 0 $color-menu-mobile-hover,
+                  0 16px 0 0 $color-menu-mobile-hover;
+    }
+
+    &--opened {
+      left: 0;
+      right: auto;
+
+      &::before,
+      &::after {
+        left: 16px;
+        top: 25px;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &--closed:active::after,
+    &--opened:active::before,
+    &--opened:active::after {
+      background-color: $color-menu-mobile-hover;
+    }
+
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    background-color: $bg-color-menu-active;
+  }
+
+  &__link {
+    border-bottom: 1px solid $color-border;
+    border-top: 1px solid $color-border-shadow;
+    color: $color-white;
+    display: block;
+    padding: 12px 20px;
+    padding-bottom: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:active {
+      color: $color-menu-mobile-hover;
+    }
+
+    &--active {
+      cursor: default;
+
+      &:active {
+        color: $color-white;
+      }
+
+    }
+
+  }
+
+  &__user {
+    line-height: $line-height-small;
+  }
+
+  &__login {
+    color: $color-white;
+    display: block;
+    padding: 14px 20px;
+    padding-left: 47px;
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+      background-image: url("../img/sprite.png");
+      background-position: -10px -204px;
+      background-repeat: no-repeat;
+      content: "";
+      height: 16px;
+      left: 19px;
+      position: absolute;
+      top: 17px;
+      width: 16px;
+    }
+
+    &:active {
+      color: $color-menu-mobile-hover;
+    }
+
+  }
+
+}
+
+@media #{$break-small} {
+
+  .menu {
+    margin-top: -16px;
+
+    &__item-our-works {
+      display: none;
+    }
+
+    &__wrapper--opened &__item-our-works {
+      display: inline;
+    }
+
+    &__wrapper--closed &__item,
+    &__wrapper--closed &__user {
+      display: none;
+    }
+
+    &__wrapper--closed &__item--show {
+      display: block;
+    }
+
+    &__wrapper--closed &__link {
+      border: none;
+      padding: 13px 0;
+      text-align: center;
+    }
+
+    &__wrapper--opened {
+      background-color: $bg-color-menu-login;
+      height: 100vh;
+      left: 70px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 15;
+
+      &::after {
+        box-shadow: inset 4px 0 7px -2px rgba(0, 0, 0, 0.5);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 5;
+        width: 7px;
+      }
+
+    }
+
+  }
+
+}
+
+@media #{$break-medium} {
+
+  .menu {
+    @include container-fluid;
+
+    background-color: $bg-color-menu;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      background-color: $bg-color-menu;
+      margin-right: 34px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+    }
+
+    &__link {
+      border: none;
+      color: $color-white;
+      display: block;
+      padding: 0;
+      padding-bottom: 24px;
+      padding-top: 24px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $color-news-text-hover;
+      }
+
+      &:active {
+        color: $color-menu-tablet-active;
+      }
+
+      &--active {
+
+        &::after {
+          border-bottom: 3px solid $bg-color-menu-active;
+          bottom: -2px;
+          content: "";
+          height: 3px;
+          left: 0;
+          position: absolute;
+          right: 0;
+        }
+
+        &:hover,
+        &:active {
+          color: $color-white;
+        }
+
+      }
+
+    }
+
+    &__user {
+      font-size: 0;
+    }
+
+    &__login {
+
+      &::before {
+        top: 29px;
+      }
+
+      &:hover::before {
+        background-position: -10px -276px;
+      }
+
+      &:active::before {
+        background-position: -10px -204px;
+      }
+
+    }
+
+  }
+
+}
+
+@media #{$break-large} {
+
+  .menu {
+
+    &__item {
+      margin-right: 0;
+    }
+
+    &__user {
+      font-size: inherit;
+      font-weight: bold;
+      margin-right: 11px;
+      text-transform: uppercase;
+    }
+
+    &__link {
+      padding-left: 32px;
+      padding-right: 32px;
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-black;
+      }
+
+      &:active {
+        color: $color-menu-desktop-active;
+      }
+
+      &--active {
+
+        &::after {
+          left: 32px;
+          right: 32px;
+        }
+
+        &:hover {
+          background-color: $color-black;
+          color: $color-white;
+        }
+
+        &:active {
+          color: $color-white;
+        }
+
+      }
+
+    }
+
+    &__login {
+      padding-bottom: 23px;
+      padding-top: 24px;
+
+      &::before {
+        left: 11px;
+        top: 28px;
+        z-index: 15;
+      }
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-black;
+
+        &::before {
+          opacity: 0.3;
+        }
+
+      }
+
+      &:active {
+        color: $color-menu-desktop-active;
+
+        &::before {
+          background-position: -10px -276px;
+          opacity: 0.1;
+        }
+
+      }
+
+    }
+  }
+
+}
