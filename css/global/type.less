@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "PT Sans Narrow";
+  src:  local("PT Sans Narrow"),
+        url("../fonts/ptsansnarrow.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ptsansnarrow.woff") format("woff"),
+        url("../fonts/ptsansnarrow.ttf") format("truetype"),
+        url("../fonts/ptsansnarrow.svg#pt_sans_narrowregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans Narrow";
+  src:  local("PT Sans Narrow Bold"),
+        url("../fonts/ptsansnarrowbold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ptsansnarrowbold.woff") format("woff"),
+        url("../fonts/ptsansnarrowbold.ttf") format("truetype"),
+        url("../fonts/ptsansnarrowbold.svg#pt_sans_narrowbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@base-font: PT Sans Narrow, Arial, sans-serif;
+
+@font-size-small: 16px;
+@font-size-base: 18px;
+@font-size-medium: 20px;
+@font-size-large: 24px;
+@font-size-big: 30px;
+@font-size-extra: 40px;
+@font-size-huge: 72px;
+
+@line-height-xsmall: 18px;
+@line-height-small: 24px;
+@line-height-base: 27px;
+@line-height-medium: 30px;
+@line-height-big: 40px;
+@line-height-huge: 72px;
+
+body {
+  font-family: @base-font;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+}
+
+b {
+  font-size: @font-size-big;
+  font-weight: bold;
+  line-height: @line-height-medium;
+}
+
+@media @break-medium {
+
+  b {
+    font-size: @font-size-extra;
+    line-height: @line-height-big;
+  }
+
+}
+
+p {
+  font-size: @font-size-medium;
+}
+
+a {
+
+  &:hover {
+
+  }
+
+}
+
+ul {
+
+    li {
+      font-weight: bold;
+      line-height: @line-height-small;
+    }
+
+}
