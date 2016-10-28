@@ -1,0 +1,22 @@
+.footer {
+  border: 1px solid @color-border-footer;
+  color: @color-white;
+  margin-top: 35px;
+  
+}
+
+@media @break-medium {
+  .footer {
+    .container-fluid();
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media @break-large {
+  .footer {
+    flex-wrap: nowrap;
+  }
+}

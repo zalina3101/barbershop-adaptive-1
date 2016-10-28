@@ -1,0 +1,48 @@
+.slider {
+  font-size: 0;
+  position: relative;
+  text-align: center;
+  line-height: 24px;
+  
+  &__btn {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 5px 13px 0;
+    border: 1px solid #fff;
+    vertical-align: top;
+    transform: rotate(45deg);
+    
+    &--feedback {
+      border-color: @color-border-slider;
+    }
+  }
+  
+  &__selector[type="radio"] {
+    display: none;
+  }
+
+  @media @break-medium {
+    &--advantages {
+      display: none;
+    }
+    
+    &--feedback {
+      position: absolute;
+      background-color: @bg-color-news;
+      bottom: -17px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 125px;
+    
+    }
+  }
+  
+  @media @break-large {
+    &--feedback {
+      background-color: transparent;
+      bottom: -65px;
+    }
+  }
+}
+

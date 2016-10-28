@@ -1,0 +1,44 @@
+.contacts {
+  padding: 31px 19px 25px 19px;
+  text-align: center;
+  
+  &__title {
+    display: block;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 10px;
+  }
+  
+  &__adress {
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 0 19px 0;
+  }
+  
+  &__tel {
+    display: none;
+  } 
+}
+
+@media @break-medium {
+  .contacts {
+    order: 1;
+    padding: 0;
+    padding-bottom: 41px;
+    padding-top: 50px;
+    text-align: left;
+    
+    &__title {
+      text-transform: uppercase;
+    }
+    
+    &__adress {
+      margin: 0;
+      margin-bottom: 2px;
+    }
+
+    &__tel {
+      display: inline;
+    }
+  }
+}
