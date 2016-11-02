@@ -65,8 +65,19 @@
       opacity: 1;
     }
     
+    &--inner-page {
+      background-image: url("../img/bg-desktop-inner.jpg");
+      background-size: auto;
+      height: 320px;
+    }
+
     &__image {
       padding-top: 33px;
+    }
+
+    &--inner-page  &__image {
+      padding-left: 0;
+      padding-top: 30px;
     }
   }
 }

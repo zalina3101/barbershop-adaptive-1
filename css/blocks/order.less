@@ -1,0 +1,49 @@
+.order {
+  .triangle(@bg-color-news);
+  background-color: @bg-color-news;
+  position: relative;
+  
+  &__title {
+    .title;
+
+    margin: 0;
+    margin-bottom: 1px;
+    padding: 29px 0;
+    text-align: center;
+  }
+}
+
+@media @break-medium {
+  .order {
+    
+    &::after {
+      content: none;
+    }
+    
+    &__header {
+      .container-fluid();
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      padding-bottom: 48px;
+      padding-top: 25px;
+    }
+    
+    &__title {
+      font-size: @font-size-extra;
+      text-align: left;
+    }
+
+    
+  }
+}
+
+@media @break-large {
+
+  .order__header {
+    padding-top: 20px;
+  }
+
+}
