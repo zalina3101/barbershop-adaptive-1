@@ -1,0 +1,3 @@
+background .feedback__selector[type="radio"] {
+  display: none;
+}
