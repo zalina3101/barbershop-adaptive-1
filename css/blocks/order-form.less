@@ -178,12 +178,15 @@
   &__list-item {
     display: flex;
     flex-direction: column;
+    
 
     &--model {
       margin-bottom: 43px;
       margin-left: 23px;
       margin-right: 10px;
       padding-top: 48px;
+      
+      
     }
 
     &--additional {
@@ -197,6 +200,283 @@
   
 }
 
+@media @break-medium {
+  .order-form {
+    padding-bottom: 76px;
+    
+    &__title {
+      background-color: @bg-color-news;
+      display: inline-block;
+      font-size: @font-size-big;
+      line-height: @line-height-medium;
+      position: relative;
+      text-align: center;
+      vertical-align: top;
+    }
+    
+    &__contacts {
+      margin-bottom: 52px;
+    }
+
+    &__model {
+      margin-bottom: 54px;
+
+      display: block;
+      width: auto;
+    }
+    
+    &__model::before,
+    &__additional::before {
+      border-top: 1px solid @color-border-news;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 0;
+      position: relative;
+      top: 17px;
+      width: 100%;
+    }
+    
+    &__model &__title {
+      margin-bottom: 39px;
+      padding: 0 25px;
+
+      width: auto;
+    }
+    
+    &__additional {
+      margin-bottom: 6px;
+    }
+
+    &__additional &__title {
+      padding: 0 31px;
+    }
+
+    &__name {
+      display: flex;
+      width: 100%;
+    }
+
+    &__communications {
+      margin: 0;
+      width: 100%;
+    }
+
+    &__caption {
+      font-size: @font-size-large;
+      line-height: @line-height-small;
+
+      &--model {
+        margin-bottom: 19px;
+
+        &::before {
+          top: -78px;
+        }
+
+      }
+
+    }
+    
+    &__field {
+
+      &--name {
+        margin: 0;
+        margin-bottom: 9px;
+        width: 33.333333%;
+
+        &:nth-child(2) {
+          order: -1;
+        }
+      }
+
+      &--communications {
+        margin-bottom: 35px;
+        width: 100%;
+      }
+
+    }
+    
+    &__field--model:checked + &__caption--model::after {
+      top: -62px;
+    }
+
+    &__information,
+    &__field {
+      font-size: @font-size-large;
+      height: auto;
+      line-height: @line-height-medium;
+      padding: 19px 24px;
+    }
+
+    &__information {
+      height: 211px;
+      resize: none;
+    }
+
+    &__field {
+
+      &--name {
+        margin: 0;
+        margin-bottom: 9px;
+        width: 33.3333%;
+
+        &:nth-child(2) {
+          order: -1;
+        }
+
+      }
+
+      &--communications {
+        margin-bottom: 35px;
+        width: 100%;
+      }
+
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+
+      &--model {
+        margin-left: 14px;
+        margin-right: 18px;
+        justify-content: space-between;
+      }
+
+      &--additional {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 36px;
+      }
+
+    }
+
+    &__list-item {
+      margin: 0;
+
+      &--model {
+        align-items: center;
+        padding-top: 85px;
+
+        &:nth-child(4) {
+          margin-right: 11px;
+        }
+
+      }
+
+      &--additional {
+        margin: 0;
+        margin-bottom: 59px;
+        padding: 0;
+        padding-left: 60px;
+        width: 260px;
+
+        &:nth-child(1) {
+          order: 1;
+        }
+
+        &:nth-child(2) {
+          order: 4;
+        }
+
+        &:nth-child(3) {
+          order: 2;
+        }
+
+        &:nth-child(4) {
+          order: 5;
+        }
+
+        &:nth-child(5) {
+          order: 3;
+        }
+
+        &:nth-child(6) {
+          order: 6;
+        }
+
+      }
+
+    }
+
+  }
+}
+
+@media @break-large {
+  .order-form {
+    padding-bottom: 87px;
+    
+    &__contacts {
+      margin-bottom: 52px;
+    }
+    
+    &__communications {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    &__model &__title {
+      margin-bottom: 45px;
+      padding: 0 40px;
+    }
+
+    &__additional {
+      margin-bottom: 27px;
+    }
+
+    &__additional &__title {
+      padding: 0 44px;
+    }
+
+    &__field {
+
+      &--name {
+        margin-right: 38px;
+        width: 30.7%;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &--communications {
+        width: 48.2%;
+      }
+
+    }
+
+    &__list {
+
+      &--model {
+        margin-left: 44px;
+        margin-right: 50px;
+      }
+
+    }
+
+    &__list-item {
+      margin: 0;
+
+      &--model {
+        align-items: center;
+        padding-top: 85px;
+
+        &:nth-child(4) {
+          margin-right: 11px;
+        }
+
+      }
+
+      &--additional {
+        margin: 0;
+        margin-bottom: 59px;
+      }
+
+    }
+
+  
+  }
+}
 
 
 
