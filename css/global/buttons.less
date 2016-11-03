@@ -60,6 +60,23 @@
   &--copyright {
     padding: 12px 87px;
   }
+  
+  &--submit {
+    background-color: @bg-color-menu-active;
+    border: none;
+    color: @color-white;
+    padding: 13px 0;
+    width: 100%;
+
+    &:hover {
+      background-color: @color-news-text-active;
+    }
+
+    &:active {
+      color: @color-menu-mobile-hover;
+    }
+
+  }
 }
 
 @media @break-medium {
@@ -86,6 +103,12 @@
       font-weight: normal;
       padding: 0;
       text-transform: none;
+    }
+    
+    &--to-main {
+      display: block;
+      height: 50px;
+      padding: 12px 35px;
     }
 
     &--copyright {
