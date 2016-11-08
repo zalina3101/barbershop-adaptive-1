@@ -191,3 +191,286 @@
 
   }
 }
+
+@media @break-medium {
+  .portfolio {
+    .triangle(@bg-color-news);
+
+    position: relative;
+
+    &::after {
+      height: 42px;
+      bottom: -42px;
+    }
+    
+    &__header {
+      .container-fluid();
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      padding-bottom: 20px;
+      padding-top: 24px;
+    }
+    
+    &__title {
+      font-size: @font-size-extra;
+    }
+    
+    &__items {
+      .container-fluid();
+      
+      padding-bottom: 20px;
+
+      &::after {
+        content: none;
+      }
+    }
+    
+    &__item {
+      display: flex;
+      margin-bottom: 41px;
+      width: auto;
+      
+        &--month::before,
+        &--month::after {
+          top: 35px;
+          left: -2px;
+          }
+
+    }
+    
+    picture {
+      min-width: 270px;
+    }
+
+    &__item-photo {
+      height: 294px;
+      width: 270px;
+    }
+
+    &__item--month &__item-photo {
+      height: 480px;
+      width: 46%;
+    }
+
+    &__item-sub {
+      border-left: none;
+      border-top: 1px solid @color-border-news;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 51px;
+      padding-top: 39px;
+      width: 100%;
+    }
+    
+    &__item--month &__item-sub {
+      padding-top: 24px;
+      width: 54%;
+    }
+
+    &__item-description {
+      display: block;
+      padding: 0;
+    }
+
+    &__item-name {
+      padding-bottom: 12px;
+    }
+
+    &__item-feedback {
+      padding-right: 80px;
+    }
+
+    &__item--month &__item-feedback {
+      padding-right: 18%;
+      max-width: 300px;
+    }
+
+    &__item-services {
+      padding: 0;
+      padding-bottom: 23px;
+    }
+
+    &__item--month &__item-services {
+      padding-bottom: 16px;
+    }
+
+    &__item-title {
+      padding-right: 17px;
+
+      &--scissors {
+        padding-left: 39px;
+
+        &::before {
+          left: 0px;
+          top: 3px;
+        }
+
+      }
+
+      &--beard {
+        padding-left: 39px;
+        padding-right: 40px;
+
+        &::before {
+          left: 0px;
+          top: 1px;
+        }
+
+      }
+
+      &--mustache {
+        padding-left: 46px;
+
+        &::before {
+          left: -11px;
+          top: 6px;
+        }
+
+      }
+
+    }
+
+    &__item--month &__item-title--beard {
+      padding-left: 57px;
+    }
+  }
+}
+
+@media @break-large {
+  .portfolio {
+    
+    &::after {
+      content: none;
+    }
+
+    &__header {
+      padding-bottom: 61px;
+      padding-top: 20px;
+    }
+    
+    &__items {
+      .container-fluid();
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-bottom: 48px;
+    }
+
+    &__item {
+      flex-direction: column;
+      margin: 0;
+      margin-bottom: 41px;
+      padding: 0;
+      width: 292px;
+
+      &--month {
+        flex-direction: row;
+        width: 100%;
+
+        &::before {
+          content: "Работа месяца";
+          left: auto;
+          padding-left: 23px;
+          padding-right: 21px;
+          right: 0;
+          text-align: left;
+          top: 26px;
+        }
+
+        &::after {
+          content: "";
+          background-image:
+            linear-gradient(
+              to bottom left,
+              @bg-color-menu-active 50%,
+              transparent 50%
+            ),
+            linear-gradient(
+              to top left,
+              @bg-color-menu-active 50%,
+              transparent 50%
+            );
+          left: auto;
+          right: 152px;
+          top: 26px;
+        }
+
+      }
+      
+    }
+      
+    &__item-photo {
+      width: 294px;
+    }
+
+    &__item--month &__item-photo {
+      width: 52.1%;
+    }
+
+    &__item-sub {
+      border: 1px solid @color-border-news;
+      border-top: none;
+      min-height: 216px;
+      padding: 0;
+      padding-top: 29px;
+      width: 292px;
+    }
+
+    &__item--month &__item-sub {
+      border: 1px solid @color-border-news;
+      border-left: none;
+      padding-left: 40px;
+      padding-top: 128px;
+      width: 47.9%;
+    }
+
+    &__item-description {
+      padding-left: 33px;
+      padding-right: 15px;
+    }
+
+    &__item--month &__item-description {
+      padding: 0;
+    }
+
+    &__item-feedback {
+      padding: 0;
+    }
+
+    &__item--month &__item-feedback {
+      padding-right: 140px;
+    }
+
+    &__item-services {
+      padding-bottom: 14px;
+      padding-left: 32px;
+    }
+
+    &__item--month &__item-services {
+      padding: 0;
+      padding-bottom: 11px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
