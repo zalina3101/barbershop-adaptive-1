@@ -1,21 +1,27 @@
-var togglePrev = document.querySelector('.feedback-toggle--prev');
-var toggleNext = document.querySelector('.feedback-toggle--next');
+var currentSlide = 0;
+var feedbackItem = document.querySelector('.feedback__item');
 
-var feedbackTravis = document.querySelector('.feedback__item--travis');
-var feedbackJohn = document.querySelector('.feedback__item--john');
-var feedbackIvan = document.querySelector('.feedback__item--ivan');
 
-togglePrev.addEventListener('click', function() {
-  if (feedbackTravis.classList.contains('.feedback__item--active')) {
-    feedbackTravis.classList.remove('.feedback__item--active');
-    feedbackIvan.classList.add('.feedback__item--active');   
-      } else if (feedbackIvan.classList.contains('.feedback__item--active')) {
-        feedbackIvan.classList.remove('.feedback__item--active');
-        feedbackJohn.classList.add('.feedback__item--active'); 
-      } else if (feedbackJohn.classList.contains('.feedback__item--active')) {
-        feedbackJohn.classList.remove('.feedback__item--active');
-        feedbackTravis.classList.add('.feedback__item--active'); 
-      }
-    
-});
+function nextSlide() {
+    goToSlide(currentSlide+1);
+}
 
+function previousSlide() {
+    goToSlide(currentSlide-1);
+}
+
+function goToSlide(n) {
+    feedbackItem[currentSlide].className = 'feedback__item';
+    currentSlide = (n+feedbackItem.length)%feedbackItem.length;
+    feedbackItem[currentSlide].className = 'feedback__item--active';
+}
+
+var next = document.getElementById('next');
+var previous = document.getElementById('previous');
+
+next.onclick = function() {
+    nextSlide();
+};
+previous.onclick = function() {
+    previousSlide();
+};
